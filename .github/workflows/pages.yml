@@ -1,0 +1,50 @@
+name: Xuat ban web va kiem tra nguon
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 13 * * *' # 22:17 Nhật Bản; GitHub có thể chạy trễ
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Kiem tra trang nguon co thay doi khong
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: python scripts/check_sources.py
+      - name: Luu lich su thay doi
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add state/source_state.json data/updates.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Theo doi thay doi nguon PBZ"
+            git push
+          fi
+      - name: Chuan bi giao dien cong khai
+        run: |
+          mkdir -p dist
+          cp index.html dist/
+          cp -R assets data dist/
+          touch dist/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
