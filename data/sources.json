@@ -1,0 +1,6 @@
+[
+ {"id":"ps-jp","name":"PlayStation Nhật Bản","type":"Chính thức","url":"https://www.playstation.com/ja-jp/games/phantom-blade-zero/","note":"Ngày phát hành, giới thiệu game và thông tin hiển thị chính thức ở Nhật."},
+ {"id":"steam","name":"Steam","type":"Chính thức","url":"https://store.steampowered.com/app/4115450/Phantom_Blade_Zero/","note":"Thông tin bản PC, ngôn ngữ và mô tả nhà phát triển (không mặc nhiên áp dụng cho PS Store Nhật)."},
+ {"id":"kungfupunk","name":"Kungfupunk","type":"Fan site có chú giải nguồn","url":"https://kungfupunk.com/","note":"Tổng hợp boss, vũ khí, thuật ngữ, hình ảnh trailer; phải đối chiếu các nhãn unconfirmed và our match."},
+ {"id":"kung-names","name":"Kungfupunk – Đối chiếu tên","type":"Nguồn phân tích","url":"https://kungfupunk.com/names","note":"Phân biệt tên được nguồn ghép trực tiếp và tên do tác giả fan site đối chiếu."}
+]
