@@ -1,10 +1,10 @@
 {
   "https://kungfupunk.com/names": {
-    "sha256": "b3efafdee80126f98bc16f7459659cbc8ca6aea849a8b254200934f1b9f9a192",
-    "last_checked": "2026-10-29T18:56:32+00:00"
+    "sha256": "4dd463e96c1aa1a2edcd3384a8273dc86ad6062b5e69f2882d18ee8a81126d0c",
+    "last_checked": "2026-10-30T18:35:47+00:00"
   },
   "https://kungfupunk.com/bosses": {
-    "sha256": "b9f82033c60f00a93cc2189965ee9d473790385bb72ac1d8abbdbafa5edb9046",
-    "last_checked": "2026-10-29T18:56:32+00:00"
+    "sha256": "aebf02afcf84713a49738fe47aecfec264952f49ba98cc942736ca06c988a4c2",
+    "last_checked": "2026-10-30T18:35:47+00:00"
   }
 }
